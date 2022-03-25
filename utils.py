@@ -22,7 +22,7 @@ def get_candidates_by_name(candidate_name, data):
 def get_candidates_by_skill(skill_name, data):
     candidates = []
     for index in data:
-        if skill_name.lower() in index['skills'].lower():
+        if skill_name.lower() in index['skills'].lower().split(", "):
             candidates.append({'id': index['id'], "name": index['name']})
     return candidates
 
